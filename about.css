@@ -1,0 +1,49 @@
+.image img{
+    width: 180px;
+    height: 200px;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding-right: 5px;
+}
+
+.main-class{
+    display: flex;
+  
+}
+.aboutus{
+    background-color: aquamarine;
+    width: 300px;
+    height: 20px;
+    margin-left: 5px;
+ 
+}
+ .aboutus a{
+    display: block ;
+    text-decoration: none;
+    font-size: 10px;
+    
+}
+.paragraph{
+    font-size: 10px;
+    width: 350px;
+}
+
+button{
+    background-color: blueviolet;
+    color: white;
+    margin-top: 3px;
+    border-radius: 20px;
+}
+.boxes {
+    display: flex;
+}
+.box1{
+    width: 85px;
+    background-color: brown;
+    margin: 2px;
+    padding: 1px;
+}
+.box2{
+    width: 85px;
+    background-color: rgb(12, 168, 225);
+}

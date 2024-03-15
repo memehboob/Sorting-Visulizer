@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visulize</title>
+    <link rel="stylesheet" href="/css/BubbleSort.css">
+    <style>
+      span {
+        .algorithm {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 5s steps(50, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+
+    </style>
+</head>
+<body>
+    <div>
+     <input type="text" placeholder="Enter Arrays Elements">
+ 
+     <button id="sortbutton" onclick="getNumbers()">Sort</button>
+     <div class="inputArray">inputArray
+        <div class="input-elements"></div>
+     </div>
+    </div>
+    <div class="main-output">output</div>
+     <div class="output">
+ 
+     </div>
+     <div id="sortAlgorithms"></div>
+     <div id="sortAlgorithms" class="algorithm"></div>
+
+
+     <script >
+   
+   const algorithms = ["selection sort", "bubble sort", "merge sort", "quick sort", "insertion sort", "shell sort"];
+const parentElement = document.getElementById('sortAlgorithms');
+
+let algorithmIndex = 0;
+let charIndex = 0;
+let isDisplaying = false;
+let isRemoving = false;
+
+function displayAlgorithms() {
+    if (!isDisplaying && !isRemoving) {
+        isDisplaying = true;
+        const algorithm = algorithms[algorithmIndex];
+        const interval = setInterval(() => {
+            if (charIndex <= algorithm.length) {
+                parentElement.textContent = algorithm.substring(0, charIndex);
+                charIndex++;
+            } else {
+                clearInterval(interval);
+                isDisplaying = false;
+                isRemoving = true;
+                setTimeout(() => {
+                    removeCharacters();
+                }, 1000); 
+            }
+        }, 100);
+    }
+}
+
+function removeCharacters() {
+    const interval = setInterval(() => {
+        if (charIndex >= 0) {
+            parentElement.textContent = algorithms[algorithmIndex].substring(0, charIndex);
+            charIndex--;
+        } else {
+            clearInterval(interval);
+            algorithmIndex = (algorithmIndex + 1) % algorithms.length;
+            charIndex = 0;
+            isRemoving = false;
+            setTimeout(() => {
+                displayAlgorithms();
+            }, 500); 
+        }
+    }, 50); 
+}
+
+setInterval(displayAlgorithms, 6000);
+
+     </script>
+ </body>
+</html>

@@ -1,0 +1,19 @@
+.output{
+    width: 200px;
+    height: 30px;
+
+}
+.output div{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 30px;
+    height: 30;
+    background-color: rgb(140, 49, 214);
+}
+.inputArray{
+    width: 200px;
+    height: 30px;
+    background-color: brown;
+}
